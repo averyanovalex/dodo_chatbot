@@ -74,7 +74,7 @@ def startup_event(last_update: str):
     )
     vectordb.persist()
 
-    model_name = "gpt-3.5-turbo"
+    model_name = "gpt-4o"
     llm = ChatOpenAI(model_name=model_name)
 
     db = Chroma.from_documents(docs, embeddings)
