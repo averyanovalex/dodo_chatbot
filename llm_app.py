@@ -22,11 +22,12 @@ from dotenv import load_dotenv
 check_not_russian_ip(verbose=True)
 load_dotenv('.env')
 
-st.title("Hi, I'm your Shopping ChatBot!")
+st.title("Demo Pizza ChatBot!")
 
 
 OPEN_AI_KEY = os.getenv('OPENAI_API_KEY')
 openai.api_key = OPEN_AI_KEY
+MODEL_NAME = "gpt-4o"
 
 tmp_directory = 'tmp'
 
@@ -64,6 +65,8 @@ def startup_event(last_update: str):
     documents = load_docs(directory)
     docs = split_docs(documents)
 
+    
+
     embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
     persist_directory = "chroma_db"
 
@@ -74,7 +77,7 @@ def startup_event(last_update: str):
     )
     vectordb.persist()
 
-    model_name = "gpt-4o"
+    model_name = MODEL_NAME
     llm = ChatOpenAI(model_name=model_name)
 
     db = Chroma.from_documents(docs, embeddings)
@@ -107,7 +110,7 @@ def start_chatbot():
 
 
     if "openai_model" not in st.session_state:
-        st.session_state["openai_model"] = "gpt-3.5-turbo"
+        st.session_state["openai_model"] = MODEL_NAME
     
     if "messages" not in st.session_state:
         st.session_state.messages = []
@@ -117,7 +120,7 @@ def start_chatbot():
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
     
-    if prompt := st.chat_input("What is up?"):
+    if prompt := st.chat_input("What pizza would you like?"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
