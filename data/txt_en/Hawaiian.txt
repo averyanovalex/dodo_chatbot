@@ -1,0 +1,8 @@
+Title:
+Hawaiian
+
+Description:
+Hawaiian Pizza. Double portion of chicken, pineapples, mozzarella, specialty alfredo sauce.
+
+Price:
+$ 4.99

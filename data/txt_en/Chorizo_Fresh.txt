@@ -1,0 +1,9 @@
+Title:
+Chorizo Fresh
+
+Description:
+Chorizo Fresh Pizza.
+Spicy chorizo sausage, sweet peppers, mozzarella, specialty tomato sauce.
+
+Price:
+$ 2.99
