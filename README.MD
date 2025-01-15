@@ -1,7 +1,6 @@
 Simple chatbot with RAG
 
-link:
-https://www.projectpro.io/project-use-case/llm-project-for-beginners-to-build-and-fine-tune-an-llm
+video how it works: https://youtu.be/Pe2djPE8vs0
 
 Run app:
 ```
